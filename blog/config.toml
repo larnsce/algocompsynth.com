@@ -1,99 +1,100 @@
-# Hugo variables
-#
 baseurl = "https://www.algocompsynth.com/"
 languageCode = "en-us"
 title = "algocompsynth.com"
-theme = "theme-hugo-foundation6"
-# number of posts to show on home/category/tag pages (Default: 10)
-paginate = 5
-# optionally override the site's footer with custom copyright text
-copyright = "Except where otherwise noted, content on this site is licensed under a [Creative Commons Attribution 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/)."
-#googleAnalytics = "UA-123-45"
-#disqusShortname = "XYW"
+# Enable comments by entering your Disqus shortname
+disqusShortname = ""
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = ""
+# Define the number of posts per page
+paginate = 10
+footnotereturnlinkcontents = "↩"
+theme = "hugo-icarus-theme"
+
 
 [permalinks]
-  post = "/:year/:month/:title/"
-  page = "/:slug/"
-
-[[menu.sidebar]]
-  name = "Link 1"
-  url = "https://example.com"
-
-[[menu.sidebar]]
-  name = "Link 2"
-  url = "https://example.org"
-
-# custom navbar menu entry.   See the custom_navbar parameter below for
-# details.
-
-#[[menu.navbar]]
-#  name = "Link 1"
-#  url = "https://example.org"
+    post = "/:year/:month/:day/:slug"
 
 
-# Theme variables
-#
 [params]
-  # Site author
-  author = "M. Edward (Ed) Borasky"
+    # Tell me who you are
+    author = "M. Edward (Ed) Borasky"
+    bio = "Algorithmic Composer"
+    location = "Portland, Oregon, USA"
+    site_description = ""
+    copyright  = "Powered by [Hugo](//gohugo.io). Theme by [PPOffice](http://github.com/ppoffice)."
+    avatar = "css/images/curmudgeon-x.jpg"
+    # logo = "css/images/logo.png"
+    disable_mathjax = false # set to true to disable MathJax
 
-  # Description/subtitle for homepage (can be Markdown)
-  description = "Algorithmic composition and digital sound synthesis"
+    # Format dates with Go's time formatting
+    date_format = "2006-01-02"
 
-  # Format dates with Go's time formatting
-  date_format = "2017-05-11"
+    # Add custom assets with their paths relative to the static folder
+	custom_css = []
+	custom_js  = []
 
-  # verification string for Google Webmaster Tools
-  #google_verify_meta = "BAi57DROASu4b2mkVNA_EyUsobfA7Mq8BmSg7Rn-Zp9"
+# Create custom menu entries by defining a label and a link for
+# them. Since you can also link posts, you've the option the
+# place the links before or after them.
+#
+# E.g.: "Home" appears before all linked posts in the menu
+# and "Tags" / "Categories" after them.
+[[params.menu]]
+    before = true
+    label  = "Home"
+    link   = "/"
 
-  # verification string for Bing Webmaster Tools
-  #bing_verify_meta = "3DA353059F945D1AA256B1CD8A3DA847"
+[[params.menu]]
+    before = false
+    label  = "Tags"
+    link   = "tags/"
 
-  # verification string for Yandex Webmaster Tools
-  #yandex_verify_meta = "66b077430f35f04a"
+#[[params.menu]]
+#    before = false
+#    label  = "Categories"
+#    link   = "categories/"
 
-  # Optionally display a message about the site's use of cookies, which may be
-  # required for your site in the European Union. Set the parameter below to a
-  # page where the user can get more information about cookies, either on your
-  # site or externally, for example:
-  # cookie_consent_info_url = "/cookie-information/"
-  # cookie_consent_info_url = "http://cookiesandyou.com"
+# Enter a link for the follow button on the left
+[params.profile]
+    follow_button = "https://twitter.com/znmeb"
 
-  # customise the contents of the navbar at the top of the page.  The default
-  # behaviour is to list all static pages not in the posts directory. When the
-  # parameter below is set to true you will have to manually add entries to the
-  # navbar, either by adding the following menu variable to the front matter of
-  # the relevant pages
-  #   menu = "navbar"
-  # or by specifying menu entries in a similar way to the sidebar menu above.
-  #custom_navbar = true
 
-  [params.sidebar]
-    # Optional about block for sidebar (can be Markdown)
-    about = "About time"
+[social]
+# Add your social network accounts to the profile section on the left
+# by entering your username. The links to your account will be
+# created automatically.
+    github          = "znmeb"
+    gitlab          = ""
+    bitbucket       = ""
+    jsfiddle        = ""
+    codepen         = ""
+    foursquare      = ""
+    dribbble        = ""
+    deviantart      = ""
+    behance         = ""
+    flickr          = ""
+    instagram       = ""
+    youtube         = ""
+    vimeo           = ""
+    vine            = ""
+    medium          = ""
+    wordpress       = ""
+    tumblr          = ""
+    xing            = ""
+    linkedin        = ""
+    slideshare      = ""
+    stackoverflow   = ""
+    reddit          = ""
+    pinterest       = ""
+    googleplus      = ""
+    facebook        = ""
+    facebook_admin  = ""
+    twitter_domain  = ""
+    twitter         = "znmeb"
 
-    # How many posts to show on the sidebar (Default: 5)
-    #num_recent_posts = 2
-
-  [params.social]
-    # Optional, used for attribution in Twitter cards
-    # See: https://dev.twitter.com/cards/types/summary-large-image
-    twitter = "znmeb"
-
-  [params.sharingicons]
-    # Hide the sharing icons on posts? (Default: false)
-    hide = false
-
-    # Optionally, set any of these to false to hide them:
-    facebook = false
-    googleplus = false
-    linkedin = false
-    twitter = false
-
-# Default content language for Hugo 0.17's multilingual support (default is "en")
-# See: https://github.com/spf13/hugo/blob/master/docs/content/content/multilingual.md
-DefaultContentLanguage = "en"
-
-# Languages to render
-[languages.en]
-#[languages.bg]
+# Enable and disable widgets for the right sidebar
+[params.widgets]
+    recent_articles = true
+    categories = false
+    tags = false
+    tag_cloud = false
