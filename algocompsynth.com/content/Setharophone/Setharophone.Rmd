@@ -13,6 +13,7 @@ Try executing this chunk by clicking the *Run* button within the chunk or by pla
 install.packages(c(
   "audio",
   "audiolyzR",
+  "seewave",
   "sound",
   "tuneR"
 ))
